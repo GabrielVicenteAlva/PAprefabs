@@ -1,3 +1,5 @@
+// Set prefab's properties, generate objects and give them events. Once done call prefab::generate()
+
 #include<string>
 #include<vector>
 #include<fstream>
@@ -75,7 +77,7 @@ namespace shapes{
     		this->text = text;
     	}
     };
-	const Shape *sq = new Shape(0); //Square
+	const Shape * const sq = new Shape(0); //Square
 	const Shape *sq2 = new Shape(0,1); //Hollow Square
 	const Shape *sq3 = new Shape(0,2); //Hollower Square
 	const Shape *cr = new Shape(1);//Circle
@@ -164,10 +166,10 @@ struct Object{
 	vector<Event> sca;
 	vector<Event> rot;
 	vector<Event> col;
-	Object(float st,int depht,shapes::Shape *shape,int bin = 0,bool helper = false,bool autoKill = true,bool empty = false){
+	Object(float st,int depht,const shapes::Shape *shape,int bin = 0,bool helper = false,bool autoKill = true,bool empty = false){
 		this->st = st;
 		this->depht = depht;
-		this->shape = shape;
+		this->shape = (shapes::Shape *) shape;
 		this->bin = bin;
 		this->helper = helper;
 		this->autoKill = autoKill;
@@ -180,7 +182,7 @@ struct Object{
 		this->ox = ox;
 		this->oy = oy;
 	}
-	void parentOffset(bool posBool,bool scaBool,bool rotBool,float posOffset,float scaOffset,float rotOffset){
+	void parentOffset(bool posBool,bool scaBool,bool rotBool,float posOffset = 0.,float scaOffset = 0.,float rotOffset = 0.){
 	    pt  = posBool ? "1" : "0";
 	    pt += scaBool ? "1" : "0";
 	    pt += rotBool ? "1" : "0";
