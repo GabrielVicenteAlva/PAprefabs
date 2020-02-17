@@ -78,26 +78,26 @@ namespace shapes{
     	}
     };
 	const Shape * const sq = new Shape(0); //Square
-	const Shape *sq2 = new Shape(0,1); //Hollow Square
-	const Shape *sq3 = new Shape(0,2); //Hollower Square
-	const Shape *cr = new Shape(1);//Circle
-	const Shape *cr2 = new Shape(1,1);
-	const Shape *cr3 = new Shape(1,4);
-	const Shape *sCr = new Shape(1,2);//Semicircle
-	const Shape *sCr2 = new Shape(1,3);
-	const Shape *qCr = new Shape(1,5);//Quad Circle
-	const Shape *qCr2 = new Shape(1,6);
-	const Shape *oCr = new Shape(1,7);//Oct Circle
-	const Shape *oCr2 = new Shape(1,8);
-	const Shape *tr = new Shape(2);
-	const Shape *tr2 = new Shape(2,1);
-	const Shape *rTr = new Shape(2,2);//Right Triangle
-	const Shape *rTr2 = new Shape(2,3);
-	const Shape *circ = new Shape(1);
-	const Shape *ar = new Shape(3);//Arrow
-	const Shape *ar2 = new Shape(3,1);
-	const Shape *hx = new Shape(5);
-	const Shape *hx2 = new Shape(5,1);
+	const Shape * const sq2 = new Shape(0,1); //Hollow Square
+	const Shape * const sq3 = new Shape(0,2); //Hollow Square
+	const Shape * const cr = new Shape(1);//Circle
+	const Shape * const cr2 = new Shape(1,1);
+	const Shape * const cr3 = new Shape(1,4);
+	const Shape * const sCr = new Shape(1,2);//Semicircle
+	const Shape * const sCr2 = new Shape(1,3);
+	const Shape * const qCr = new Shape(1,5);//Quad Circle
+	const Shape * const qCr2 = new Shape(1,6);
+	const Shape * const oCr = new Shape(1,7);//Oct Circle
+	const Shape * const oCr2 = new Shape(1,8);
+	const Shape * const tr = new Shape(2);
+	const Shape * const tr2 = new Shape(2,1);
+	const Shape * const rTr = new Shape(2,2);//Right Triangle
+	const Shape * const rTr2 = new Shape(2,3);
+	const Shape * const circ = new Shape(1);
+	const Shape * const ar = new Shape(3);//Arrow
+	const Shape * const ar2 = new Shape(3,1);
+	const Shape * const hx = new Shape(5);
+	const Shape * const hx2 = new Shape(5,1);
 	const Shape *hx3 = new Shape(5,2);
 	const Shape *sHx = new Shape(5,3);//Semi Hexagon
 	const Shape *sHx2 = new Shape(5,4);
@@ -149,7 +149,7 @@ struct Event{
 struct Object{
 	string id,name,pt;
 	Object *parent = NULL;
-	int depht = 15;
+	int depth = 15;
 	shapes::Shape *shape = NULL;
 	bool helper = false;
 	bool autoKill = false;
@@ -166,9 +166,9 @@ struct Object{
 	vector<Event> sca;
 	vector<Event> rot;
 	vector<Event> col;
-	Object(float st,int depht,const shapes::Shape *shape,int bin = 0,bool helper = false,bool autoKill = true,bool empty = false){
+	Object(float st,int depth,const shapes::Shape *shape,int bin = 0,bool helper = false,bool autoKill = true,bool empty = false){
 		this->st = st;
-		this->depht = depht;
+		this->depth = depth;
 		this->shape = (shapes::Shape *) shape;
 		this->bin = bin;
 		this->helper = helper;
@@ -238,7 +238,7 @@ struct Object{
 	    	file<<"],\n";
 		}
 		indent(3,"p",parent ? parent->id : "");
-		indent(3,"d",depht);
+		indent(3,"d",depth);
 		indent(3,"h",helper ? "True" : "False");
 		indent(3,"st",st);
 		indent(3,"name",name);
