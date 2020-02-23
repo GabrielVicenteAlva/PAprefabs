@@ -98,9 +98,9 @@ namespace shapes{
 	const Shape * const ar2 = new Shape(3,1);
 	const Shape * const hx = new Shape(5);
 	const Shape * const hx2 = new Shape(5,1);
-	const Shape *hx3 = new Shape(5,2);
-	const Shape *sHx = new Shape(5,3);//Semi Hexagon
-	const Shape *sHx2 = new Shape(5,4);
+	const Shape * const hx3 = new Shape(5,2);
+	const Shape * const sHx = new Shape(5,3);//Semi Hexagon
+	const Shape * const sHx2 = new Shape(5,4);
 	Shape *txt(string s){
 	    return new Shape(4,0,s);
 	}
@@ -325,27 +325,27 @@ struct Object{
 
 
 void prefab::generate(){
-		string fileName = "";
-		for(char c:name)
-			fileName+=tolower(c);
-		fileName += ".lsp";
-		file.open(fileName);
-		file<<"{\n";
-		indent(1,"name",name);
-		indent(1,"type",type);
-		indent(1,"offset",offset);
-		indent(1);
-		file<<"\"objects\" : [ \n";
-		bool first = true;
-		for(Object *object:objects){
-			if(first)
-				first = false;
-			else
-				file<<",\n";
-			object->print();
-		}
-		file<<endl;
-		indent(1);
-		file<<"] \n}";
-		file.close();
+	string fileName = "";
+	for(char c:name)
+		fileName+=tolower(c);
+	fileName += ".lsp";
+	file.open(fileName);
+	file<<"{\n";
+	indent(1,"name",name);
+	indent(1,"type",type);
+	indent(1,"offset",offset);
+	indent(1);
+	file<<"\"objects\" : [ \n";
+	bool first = true;
+	for(Object *object:objects){
+		if(first)
+			first = false;
+		else
+			file<<",\n";
+		object->print();
 	}
+	file<<endl;
+	indent(1);
+	file<<"] \n}";
+	file.close();
+}
