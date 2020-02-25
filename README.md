@@ -10,7 +10,7 @@ This will ease generating Project Arrythmia prefabs with C++.
   - Ignore the other varibles in the namespace
 - Creating objects:
   - The Object class constructor is as follows:
-  ```
+  ```cpp
     Object(
       float st, // Starting time
       int depth, // Rendering depth
@@ -28,7 +28,7 @@ This will ease generating Project Arrythmia prefabs with C++.
     - ```void setCenter(float x,float y)```: Give ```x``` and  ```y``` the values 0, 0.5 or -0.5
     - ```void parentOffset(bool posBool,bool scaBool,bool rotBool,float posOffset = 0.,float scaOffset = 0.,float rotOffset = 0.)```
   - Adding events: Use these four functions:
-  ```
+  ```cpp
   void posEvent(
     float t, // Time
     float x,
