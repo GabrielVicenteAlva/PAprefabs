@@ -98,9 +98,9 @@ namespace shapes{
 	const Shape * const ar2 = new Shape(3,1);
 	const Shape * const hx = new Shape(5);
 	const Shape * const hx2 = new Shape(5,1);
-	const Shape * const hx3 = new Shape(5,2);
-	const Shape * const sHx = new Shape(5,3);//Semi Hexagon
-	const Shape * const sHx2 = new Shape(5,4);
+	const Shape *hx3 = new Shape(5,2);
+	const Shape *sHx = new Shape(5,3);//Semi Hexagon
+	const Shape *sHx2 = new Shape(5,4);
 	Shape *txt(string s){
 	    return new Shape(4,0,s);
 	}
@@ -141,6 +141,8 @@ struct Event{
 		}
 		if(easeType!="" && easeType!=easeTypes::line)
 			indent(6,"ct",easeType);
+		file.seekp(-3,file.cur);
+		file<<" \n";
 		indent(5);
 		file<<"}";
 	}
@@ -254,12 +256,16 @@ struct Object{
 		file<<"\"o\" : { \n";
 		indent(4,"x",ox);
 		indent(4,"y",oy);
+		file.seekp(-3,file.cur);
+		file<<" \n";
 		indent(3);
 		file<<"}, \n";
 		indent(3);
 		file<<"\"ed\" : { \n";
 		indent(4,"bin",bin);
 		indent(4,"layer",layer);
+		file.seekp(-3,file.cur);
+		file<<" \n";
 		indent(3);
 		file<<"}, \n";
 		indent(3);
