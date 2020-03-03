@@ -1,3 +1,5 @@
+#include "prefab.hpp"
+
 int main(){
     prefab::name = "SingleObject";
     prefab::offset = 0.;
