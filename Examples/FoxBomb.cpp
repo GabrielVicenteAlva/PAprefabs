@@ -1,4 +1,4 @@
-#include "prefabs.h"
+#include "prefab.hpp"
 #include <math.h>
 
 const float PI = 4*atan(1.);
