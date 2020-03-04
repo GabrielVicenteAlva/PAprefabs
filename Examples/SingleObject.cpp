@@ -18,10 +18,13 @@ int main(){
     // First give an starting event to every type.
     obj->posEvent(0.,-14.,10.);
     obj->scaEvent(0.,4.,4.);
-    obj->rotEvent(0.,0.);
+    obj->rotEvent(0.,45.);
     obj->colEvent(0.,0);
-    // Adding an event at 2 seconds to move obj to (16,-12)
+    // Adding events at 2 seconds to alter obj
     obj->posEvent(2.,16.,-12.);
+    obj->scaEvent(2.,2.,1.);
+    obj->rotEvent(2.,-90.);
+    obj->colEvent(2.,1);
     // Call this at the end of the program
     prefab::generate();
     return 0;
