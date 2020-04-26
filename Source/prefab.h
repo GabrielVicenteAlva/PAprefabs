@@ -184,7 +184,7 @@ struct Object{
 	vector<Event> sca;
 	vector<Event> rot;
 	vector<Event> col;
-	Object(float st,int depth,const shapes::Shape *shape,int bin = 0,int oy = 0,int akt = 1,float ako = 0.){
+	Object(float st,int depth,const shapes::Shape *shape,int bin = 0,int ot = 0,int akt = 1,float ako = 0.){
 		this->st = st;
 		this->ot = ot;
 		this->akt = akt;
