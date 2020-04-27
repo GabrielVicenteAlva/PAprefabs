@@ -16,13 +16,13 @@ This will ease generating Project Arrythmia prefabs with C++.
       int depth, // Rendering depth
       const shapes::Shape *shape, // See shape list in shape namespace
       int bin = 0,
-      bool helper = false,
-      bool autoKill = true,
-      bool empty = false
+      int ot, // Object Type
+      int akt, // AutoKill Type
+      int ako // AutoKill Offset
     )
   ```
   - To create an object:
-  ```Object *obj = new Object(0.,15,shapes::sq,0,false,true,false);```
+  ```Object *obj = new Object(0.,15,shapes::sq,0,objectTypes::normal,autoKillTypes::lastKFOffset,0.);```
   - Other properties:
     - ```Object *parent```: Assign object's parent
     - ```void setCenter(float x,float y)```: Give ```x``` and  ```y``` the values 0, 0.5 or -0.5
@@ -38,7 +38,7 @@ This will ease generating Project Arrythmia prefabs with C++.
     float rx = 0., // Random X
     float ry = 0., // Random Y
     float rz = 0. // Random interval
-  )
+  );
   void scaEvent(float t,float x,float y,string easeType = easeTypes::line,int r = 0,float rx = 0.,float ry = 0.,float rz = 0.);
   void rotEvent(float t,float x,string easeType = easeTypes::line,int r = 0,float rx = 0.,float rz = 0.);
   void colEvent(float t,int x,string easeType = easeTypes::line,int r = 0,float rx = 0.,float rz = 0.);
