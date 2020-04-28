@@ -79,6 +79,15 @@ namespace easeTypes{
 	const string iBoun = "InBounce";
 	const string oBoun = "OutBounce";
 	const string ioBoun = "InOutBounce";
+	const string iQuad = "InQuad";
+	const string oQuad = "OutQuad";
+	const string ioQuad = "InOutQuad";
+	const string iCirc = "InCirc";
+	const string oCirc = "OutCirc";
+	const string ioCirc = "InOutCirc";
+	const string iExpo = "InExpo";
+	const string oExpo = "OutExpo";
+	const string ioExpo = "InOutExpo";
 }
 namespace et = easeTypes;
 
