@@ -268,6 +268,8 @@ struct Object{
 		indent(3,"d",depth);
 		indent(3,"ot",ot);
 		indent(3,"st",st);
+		if(shape->shape==4)
+			indent(3,"text",shape->text);
 		indent(3,"name",name);
 		if(shape && (shape->shape || shape->so))
 			indent(3,"shape",shape->shape);
