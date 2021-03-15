@@ -1,5 +1,5 @@
 # PAprefabs
-This will ease generating Project Arrythmia prefabs with C++.
+Automating generation of Project Arrythmia prefabs with C++.
 ## Use Guide:
 - ```#include "prefab.h"```
 - There's no prefab class, it's just one per program.
